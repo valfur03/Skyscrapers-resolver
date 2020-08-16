@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_board.h                                      :+:      :+:    :+:   */
+/*   ft_put.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: datack <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/16 14:19:24 by datack            #+#    #+#             */
-/*   Updated: 2020/08/16 14:19:27 by datack           ###   ########.fr       */
+/*   Created: 2020/08/16 14:00:06 by datack            #+#    #+#             */
+/*   Updated: 2020/08/16 14:00:07 by datack           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECK_BOARD_H
-# define CHECK_BOARD_H
-# include <stdlib.h>
-# include "ft_put.h"
+#ifndef FT_PUT_H
+# define FT_PUT_H
+# include <unistd.h>
 
-int		checkleft(int *row);
-int		checkright(int *row);
-int		checkrow(int *row);
-int		issafe(int **board, int val, int row, int col);
-int		checkcolumn(int **board, int column);
+void ft_putchar(char c);
+void ft_putstr(char *str);
+void error(void);
+int *error_null(void);
+
 #endif

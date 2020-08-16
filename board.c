@@ -1,21 +1,9 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   board.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: datack <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/15 13:33:01 by datack            #+#    #+#             */
-/*   Updated: 2020/08/16 12:14:09 by vfurmane         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "board.h"
 
-static void	initcolumns(int **board, int *vals)
+static void init_columns(int **board, int *vals)
 {
-	int	i;
-	int	mode;
+	int i;
+	int mode;
 
 	mode = 0;
 	while (mode < 2)
@@ -30,10 +18,10 @@ static void	initcolumns(int **board, int *vals)
 	}
 }
 
-static void	initrows(int **board, int *vals)
+static void init_rows(int **board, int *vals)
 {
-	int	i;
-	int	mode;
+	int i;
+	int mode;
 
 	mode = 0;
 	while (mode < 2)
@@ -48,18 +36,17 @@ static void	initrows(int **board, int *vals)
 	}
 }
 
-int			**initializeboard(int *vals)
+int **initialize_board(int *vals)
 {
-	int	i;
-	int	j;
-	int	**board;
+	int i;
+	int j;
+	int **board;
 
 	i = 0;
 	j = 0;
 	board = malloc(sizeof(*board) * 6);
 	if (!board)
 		return (NULL);
-	(void)vals;
 	while (i < 6)
 	{
 		j = 0;
@@ -68,14 +55,14 @@ int			**initializeboard(int *vals)
 			board[i][j++] = 0;
 		i++;
 	}
-	initcolumns(board, vals);
-	initrows(board, vals);
+	init_columns(board, vals);
+	init_rows(board, vals);
 	return (board);
 }
 
-void		freeboard(int **board)
+void free_board(int **board)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (i < 6)
